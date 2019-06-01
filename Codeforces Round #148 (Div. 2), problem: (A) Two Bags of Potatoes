@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+	
+int main() {
+
+	int y,k,n,cnt=0,begin=0;
+	
+	cin>>y>>k>>n;
+	
+	int p = k-y%k;
+	
+	for(int i=p;i<=n-y;i++){
+		if((y+i)%k==0){
+			begin=i;
+			cnt++;
+			break;
+		}
+		
+	}
+	
+	if(begin){
+	
+	for(int i=begin;i<=n-y;i+=k){
+		cout<<i<<" ";
+	}
+	}
+	
+	if(!cnt){
+	
+	cout<<"-1";}
+	
+	cout<<endl;
+	
+	return 0;
+}
