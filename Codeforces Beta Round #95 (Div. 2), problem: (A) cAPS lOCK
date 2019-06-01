@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+ 
+ 	string inp,outp;
+  
+	cin>>inp;
+    int len = inp.length();
+   
+   	bool first_letter_is_lowercase = true;
+    bool all_capital = true;
+    bool full_capital = true;
+    
+	if(!islower(inp[0])){
+    	first_letter_is_lowercase = false;
+	}
+    
+    
+    for(int i=0;i<len;i++){
+    	if(islower(inp[i])){
+    		full_capital = false;
+    		break;
+		}
+	}
+    
+    for(int i=1;i<len;i++){
+    	if(islower(inp[i])){
+    		all_capital = false;
+    		break;
+		}
+	}
+ 	
+ 	
+ 	if(first_letter_is_lowercase && all_capital){
+ 		inp[0] = toupper(inp[0]);
+ 		cout<<inp[0];
+ 		for(int i=1;i<len;i++){
+ 			inp[i] = tolower(inp[i]);
+ 			cout<<inp[i];
+		 }
+	 }else if(!first_letter_is_lowercase && all_capital){
+	 	
+		 
+	 	for(int i=0;i<len;i++){
+ 			inp[i] = tolower(inp[i]);
+ 			cout<<inp[i];
+	 	}
+	 }else{
+	 	for(int i=0;i<len;i++){
+ 		
+ 			cout<<inp[i];
+	 	}
+	 }
+ 	
+ 	return 0;
+ }
