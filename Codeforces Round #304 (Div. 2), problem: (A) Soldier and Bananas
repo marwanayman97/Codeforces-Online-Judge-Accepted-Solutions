@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+ 
+ 	int price_of_first,dollars,bananas_cnt,total=0,borrow;
+ 	
+ 	cin>>price_of_first;
+ 	cin>>dollars;
+ 	cin>>bananas_cnt;
+ 	
+ 	for(int i=1;i<=bananas_cnt;i++){
+ 		total += price_of_first * i;
+	 }
+ 	
+ 	borrow = total - dollars;
+ 	
+ 	if(total<dollars){
+ 		borrow=0;
+	 }
+ 	
+ 	cout<<borrow<<endl;
+ 	
+ 	return 0;
+ }
