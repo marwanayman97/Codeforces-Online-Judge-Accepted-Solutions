@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+ 
+ 	int mtr[10][10],moves=0;
+ 	
+ 	for(int i=1;i<=5;i++){
+ 		for(int j=1;j<=5;j++){
+ 			cin>>mtr[i][j];
+		 }
+	 }
+ 	
+ 	
+ 	
+	for(int i=1;i<=5;i++){
+ 		for(int j=1;j<=5;j++){
+ 			 if(mtr[i][j] == 1){
+ 				if(i<3){
+ 					moves += 3-i;
+				 }
+				 if(j<3){
+				 	moves += 3-j;
+				 }
+				 if(i>3){
+				 	moves += i-3;
+				 }
+				 if(j>3){
+				 	moves += j-3;
+				 }
+				 if(j==3 && i==3){
+				 	moves = 0 ;
+				 }
+			 }
+		 }
+	 }
+ 	
+ 	
+ 	cout<<moves<<endl;
+ 	
+ 	return 0;
+ }
