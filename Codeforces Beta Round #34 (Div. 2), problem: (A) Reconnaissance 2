@@ -1,0 +1,33 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+
+
+int main(){
+ 
+ int n;
+ int heights[105];
+ 
+ cin>>n;
+ 
+for(int i=0;i<n;i++){
+	cin>>heights[i];
+}
+
+int min= abs(heights[0]-heights[n-1]);
+
+int indexst = n,indexnd = 1;
+
+	 for(int i=0;i<n-1;i++){
+	if (min>(abs(heights[i]-heights[i+1]))){
+		min=abs(heights[i]-heights[i+1]);
+		indexst=i+1;
+		indexnd=i+2;
+	}
+}
+
+	cout<<indexst<<" "<<indexnd<<endl;
+	return 0;
+}
