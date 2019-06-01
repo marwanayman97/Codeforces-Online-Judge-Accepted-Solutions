@@ -1,0 +1,22 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main(){
+ 
+ 	 long double  n,m,a;
+	  long long ans;
+     cin>>n>>m>>a;
+      
+	 
+      	n = ceil(n/a);
+      	m = ceil(m/a);
+      	
+      	ans= m*n;
+      	cout<< ans << endl;
+	  
+   
+ 
+  return 0;
+  }
