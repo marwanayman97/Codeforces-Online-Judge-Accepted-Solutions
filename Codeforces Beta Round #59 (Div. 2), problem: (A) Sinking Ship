@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+	
+	int n,val;
+	string name,rank;
+ 	priority_queue<pair<int,string>> qu;
+ 	pair<int,string> ky,mx,tp;
+ 	
+ 	cin>>n;
+ 	
+ 	for(int i=0;i<n;i++){
+ 		
+		 cin>>name>>rank;
+ 		
+ 		if(rank.length()==7){
+ 			val = n-i;
+		 }else if(rank.length()==5 && rank[0]=='w'){
+		 	val = 2000 + n-i;
+		 }else if(rank.length()==5 && rank[0]=='c'){
+		 	val = 2000 + n-i;
+		 }else if(rank.length()==3 && rank[0]=='r'){
+		 	val = 5000 + n-i;
+		 }else if(rank.length()==3 && rank[0]=='m'){
+		 	val = 1000 + n-i;
+		 }
+ 		
+ 		qu.push(make_pair(val,name));
+	 }
+ 	
+ 	
+ 	 while(!qu.empty()){
+ 	 	cout<<qu.top().second<<endl;
+ 	 	qu.pop();
+	  }
+ 	
+	return 0;
+}
