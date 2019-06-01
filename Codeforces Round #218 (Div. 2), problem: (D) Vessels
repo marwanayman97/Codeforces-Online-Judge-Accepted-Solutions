@@ -1,0 +1,64 @@
+#include <stdio.h>
+
+using namespace std;
+
+int vs_count, qr_count, d, p, x, k, rem;
+int cap[200002], cap2[200002] = {0}, com[200002];
+
+
+int fill_water(int p, int x){
+			
+				if(p==vs_count){
+					return p;
+				}
+				
+				
+				
+				if (cap2[p] + x <= cap[p])
+				{
+					cap2[p] += x;
+					return p;
+				}
+				
+				x -= cap[p]-cap2[p];
+				cap2[p] = cap[p];
+				
+				return com[p]= fill_water(com[p],x);
+			
+			
+}
+
+int main()
+{
+	
+	scanf("%d",&vs_count);
+	
+	
+	for (int i = 0; i < vs_count; i++)
+	{
+		scanf("%d",cap+i);
+		com[i] = i+1;
+	}
+
+	scanf("%d",&qr_count);
+
+	while(qr_count--)
+	{
+		scanf("%d",&d);
+		
+		if (d == 1)
+		{
+			scanf("%d %d",&p,&x);
+			
+			fill_water(p-1,x);
+			
+		}
+		else
+		{
+			scanf("%d",&k);
+			printf("%d\n",cap2[k-1]);
+		}
+	}
+
+	return 0;
+}
