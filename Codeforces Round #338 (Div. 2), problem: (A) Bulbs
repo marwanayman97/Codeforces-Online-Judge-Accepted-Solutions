@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+  int a,b;
+   cin>>a;
+   cin>>b;
+  bool nums[b]={false};
+   
+  int i=0; 
+  bool si=false;
+  
+  while(i<a){
+    int c=0;
+     cin>>c;
+    
+    int j=0;
+    
+    while(j<c){
+      int d=0;
+       cin>>d;
+      nums[d-1]=true;
+      bool temp=true;
+      for (int z=0;z<b;z++) {
+        temp=temp&&nums[z];
+      }
+      si=temp;
+      j++;
+    }
+    
+    if (si){
+       cout<<"YES";
+      break;
+    }
+    i++;
+  }
+  if(!si){
+     cout<<"NO";
+  }
+  
+   cout<<"\n";
+}
