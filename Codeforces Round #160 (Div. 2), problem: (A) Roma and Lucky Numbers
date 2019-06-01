@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+bool cnt_lucky_digits(int num,int key){
+	int r,cnt=0;
+	while(num!=0){
+		r=num%10;
+		if(r==4 || r==7)
+		cnt++;
+		num/=10;
+	}
+	if(cnt<=key)
+	return true;
+	else
+	return false;
+}
+
+int main() {
+
+	int n,key,x,count=0;
+	
+	cin>>n>>key;
+	
+	for(int i=0;i<n;i++){
+		cin>>x;
+		if(cnt_lucky_digits(x,key))
+		count++;
+		
+	}
+	
+	cout<<count<<"\n";
+	
+	return 0;
+}
