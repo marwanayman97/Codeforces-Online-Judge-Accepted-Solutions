@@ -1,0 +1,29 @@
+#include <iostream>
+
+
+using namespace std;
+
+
+int main(){
+ 
+ int n,years[105],a,b,sum=0;
+ 
+ cin>>n;
+ 
+ years[0]=0;
+ 
+ for(int i=0;i<n-1;i++){
+ 	cin>>years[i];
+ }
+ 
+ cin>>a>>b;
+ 
+ 
+ for(int j=a-1;j<b-1;j++){
+ 	sum+= years[j];
+ }
+ 
+ cout<<sum<<endl;
+ 
+	return 0;
+}
