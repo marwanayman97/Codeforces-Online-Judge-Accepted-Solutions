@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long long cnt_lucky_digits(long long num){
+	int r,cnt=0;
+	while(num!=0){
+		r=num%10;
+		if(r==4 || r==7)
+		cnt++;
+		num/=10;
+	}
+	return cnt;
+}
+
+int main() {
+
+	long long n,x;
+	
+	cin>>n;
+	
+	x = cnt_lucky_digits(n);
+	
+	if(x==4 || x==7)
+	cout<<"YES\n";
+	else
+	cout<<"NO\n";
+	
+	return 0;
+}
