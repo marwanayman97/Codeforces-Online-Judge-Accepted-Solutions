@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+	
+int main() {
+
+	string s;
+	cin>>s;
+	
+	int cnt=0,len=s.length()/2;
+	int k=s.length(),t=s.length();
+	
+	for(int i=0;i<len;i++){
+		k--;
+		if(s[i]!=s[k])
+		
+		cnt++;
+		
+		
+	}
+	
+	
+	if(cnt==0 && t%2==1)
+         cout<<"YES\n";
+    else if(cnt==1)
+        cout<<"YES\n";
+    else
+        cout<<"NO\n";
+	
+	return 0;
+}
