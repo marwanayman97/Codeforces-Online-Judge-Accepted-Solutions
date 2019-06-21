@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+	
+	int q,r,l,sym[1000000];
+	string s;
+	cin>>s;
+	
+	for(int i=1;i<s.size();++i){
+			if(s[i]==s[i-1]){
+				sym[i]=1;
+			}
+			sym[i]+=sym[i-1];
+		}
+	cin>>q;
+	while(q--){
+		
+		cin>>l>>r;
+		
+		cout<<sym[r-1]-sym[l-1]<<endl;
+		
+	}
+	
+	
+	return 0;
+}
