@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+	
+	int n,piles[100005],q,x;
+	
+	cin>>n;
+	for(int i=0;i<n;i++){
+		scanf("%d", piles+i);
+	}
+	
+	for(int i=1;i<n;i++){
+		piles[i]+=piles[i-1];
+	}
+	
+	cin>>q;
+	
+	while(q--){
+		scanf("%d", &x);
+		printf("%d\n", lower_bound(piles, piles+n, x)-piles+1);
+	}
+	
+	
+	return 0;
+}
