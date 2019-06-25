@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+
+ll bc,sc,cc,bn=0,sn=0,cn=0,bp,sp,cp,r;
+string s;
+
+bool ok(ll x){   
+	ll bread_price=0,susage_price=0,cheese_price=0,total;
+	
+	if (bn>0) bread_price  = (x*bn-bc)*bp; 
+	if (sn>0) susage_price = (x*sn-sc)*sp; 
+	if (cn>0) cheese_price = (x*cn-cc)*cp; 
+	
+	if (bread_price<0) bread_price=0;
+	if (susage_price<0) susage_price=0;
+	if (cheese_price<0) cheese_price=0;
+	
+	total = bread_price + susage_price + cheese_price;
+	
+    if(total<=r){
+  		return true;
+  }
+  
+  else return false;
+}
+
+
+ll binarySearch(){
+  ll lo = 0, hi = r+1000, mid;
+  while(hi-lo > 0){
+    mid = (lo+hi+1)/2;
+    if(ok(mid)) lo = mid;
+    else hi = mid-1;
+  }
+  return lo;
+}
+
+
+int main (){
+    cin>>s;
+    
+    for(int i=0;i<s.size();++i){
+    	if(s[i]=='B') bn++;
+    	else if(s[i]=='S') sn++;
+    	else cn++;
+	}
+    
+    scanf("%lld %lld %lld", &bc, &sc, &cc);
+    scanf("%lld %lld %lld", &bp, &sp, &cp);
+    scanf("%lld", &r);
+    printf("%lld\n", binarySearch());
+    
+
+}
